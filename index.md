@@ -1,7 +1,7 @@
 ---
 layout: home
 ---
-# Hello Friend, 
+
 ## Welcome to my blog.
 
 >note to jae update me 
