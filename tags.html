@@ -1,0 +1,32 @@
+---
+layout: default
+title: Tags
+permalink: /tags/all
+---
+<p>Quick links</p>
+    {% for tag in site.tags %}
+      {% assign t = tag | first %}
+      {% assign posts = tag | last %}
+      <a class="label label-default" href="#{{ t | downcase }}">{{ t | downcase }}</a>
+    {% endfor %}
+
+{% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+<h1><a class="tagtitle" name="{{ t | downcase }}">{{ t | downcase }}</a><small> {{ posts | size }}  post(s)</small></h1>
+
+{% for post in posts %}
+  {% if post.tags contains t %}
+    <span class="date post-meta">{{ post.date | date: "%B %-d, %Y"  }}</span>
+    <h4>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h4>
+      {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+      {%- endif -%}
+  {% endif %}
+{% endfor %}
+{% endfor %}

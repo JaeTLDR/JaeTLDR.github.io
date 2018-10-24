@@ -1,0 +1,36 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <div class="container">
+    <h2 class="footer-heading">&copy; {{ 'now' | date: "%Y" }} &ndash; {{ site.title | escape }}</h2>
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li>
+            {%- if site.email -%}
+            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
+            <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+      </div>
+      <div class="footer-col footer-col-3">
+          {%- unless site.canary -%}
+          <img src="https://www.eff.org/files/2014/04/10/canary-1-sq.png" style="width:31px;height:31px;">
+          {%- endunless -%}
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> 
+          <p>  Site design and logos (c) 2018  JaeTLDR;<br/>
+            Code Snippets (c) 2018 JaeTLDR, licensed under the BSD 3 clause;<br/>
+            Jekyll Copyright (c) 2008-2018 Tom Preston-Werner and Jekyll contributors licensed under the MIT license;
+          </p>
+      </div>
+    </div>
+  </div>
+</footer>
